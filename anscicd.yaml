@@ -6,6 +6,6 @@
     - name: Clone repository
       git:
         repo: 'https://github.com/hyunn-n/cicdtest.git'
-        dest: /root
+        dest: /root/0220/
         clone: yes
         update: yes
