@@ -1,5 +1,5 @@
 - name: cicdtest
-  hosts: all #master
+  hosts: master
   gather_facts: no
 
   tasks:
