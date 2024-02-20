@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myweb3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myweb3
+  template:
+    metadata:
+      labels:
+        app: myweb3
+    spec:
+      containers:
+        - name: myweb3
+          image: hynnx/cicdtest:green
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myweb3
+spec:
+  type: LoadBalancer
+  selector:
+    app: myweb3
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
