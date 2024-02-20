@@ -1,0 +1,11 @@
+- name: cicdtest
+  hosts: all #master
+  gather_facts: no
+
+  tasks:
+    - name: Clone repository
+      git:
+        repo: 'https://github.com/hyunn-n/cicdtest.git'
+        dest: /usr/share/nginx/html/index.html
+        clone: yes
+        update: yes
