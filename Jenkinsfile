@@ -19,7 +19,7 @@ pipeline {
         sh '''
         ansible master -m command -a 'kubectl create deployment grweb --image=hynnx/cicdtest:Green'
         ansible master -m command -a 'kubectl expose deployment grweb --type=LoadBalancer --port=80 \
-                                           --target-port=80 --name=grweb'
+                                                                      --target-port=80 --name=grweb'
         '''
      }
     }
