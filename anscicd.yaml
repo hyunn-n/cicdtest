@@ -6,6 +6,6 @@
     - name: Clone repository
       git:
         repo: 'https://github.com/hyunn-n/cicdtest.git'
-        dest: /usr/share/nginx/html/index.html
+        dest: /root
         clone: yes
         update: yes
