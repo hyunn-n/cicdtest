@@ -17,9 +17,9 @@ pipeline {
     stage('deploy kubernetes') {
       steps{
         sh '''
-        kubectl create deployment grweb --image=hynnx/cicdtest:green
-        kubectl expose deployment grweb --type=LoadBalancer --port=80 \
-                                           --target-port=80 --name=grweb
+        ansible master -m command -a 'kubectl create deployment grweb --image=hynnx/cicdtest:green'
+        ansible master -m command -a 'kubectl expose deployment grweb --type=LoadBalancer --port=80 \
+                                           --target-port=80 --name=grweb'
         '''
      }
     }
