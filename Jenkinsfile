@@ -9,7 +9,7 @@ pipeline {
     stage('docker build and push') {
       steps {
         sh '''
-        sudo docker build -t hynnx/cicdtest:Green.
+        sudo docker build -t hynnx/cicdtest:Green .
         sudo docker push hynnx/cicdtest:Green
         '''
       }
